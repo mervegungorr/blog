@@ -1,15 +1,6 @@
- {% load staticfiles %}
-<html>
-    <head>
-        <title>Merve'nin Blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    
-    <body>
-        <div class="page-header">
+            {% extends 'blog/base.html' %}
+            {% block content %}
+  
             <h1><a href="/">Merve'nin Blogu</a></h1>
         </div>
         
@@ -19,26 +10,10 @@
         <div class="post">
             <p>published: 14.06.2014, 12:14</p>
             <h1><a href="">İlk Blogum</a></h1>
-            <p>en büyük agoy tey tey</p>
+            <p>kodlar çalışırsa çok mutlu olurum</p>
         </div>
 
          {% endfor %}
-         
+         {% endblock content %}
         
-    </body>
-</html>
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        {{ post.yayinlama_tarihi }}
-                    </div>
-                    <h1><a href="">{{ post.baslik }}</a></h1>
-                    <p>{{ post.yazi|linebreaks }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+   
